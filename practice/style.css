@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa&family=Kalam:wght@300&display=swap');
+
+body {
+    background-color: #F9BFC6;
+    margin: 0px;
+}
+.header {
+    background-color: #AA767C;
+
+}
+.logo {
+    font-color: #343633;
+    font-size: 65px;
+    font-family: 'Kadwa', serif;
+    padding-left: 50px;
+
+    /*margin: 5px; 5 px all around
+    margin: 5px 10px; 5px on top-bottom, 10px left-right
+    margin: 5px 10px 15px; left top-bottom right
+    margin: 5px 10px 15px 20px; left top right bottom
+
+   1vh = 1% of window height (viewheight) vw
+    5% (% of width)
+
+
+    position: relative;
+    top: 10px;
+    bottom: 10px
+    right: 10px;
+    lleft: 10px;*/
+}
+.logo h1 {
+    margin: 0px;
+}
+
+.content {
+    font-color: #6B6B6B;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+}
+.table {
+    padding: 100px 0px 100px 90px
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 20px;
+}
+.categories {
+}
