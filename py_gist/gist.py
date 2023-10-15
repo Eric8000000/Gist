@@ -1,12 +1,12 @@
 from flask import Flask
 from markupsafe import escape
-import requests
-from bs4 import BeautifulSoup
-# part of python
-import csv
-import time
+# import requests
+# from bs4 import BeautifulSoup
+# # part of python
+# import csv
+# import time
 
-from test import searchSafeway
+from searcher import searchSafeway
 
 app = Flask(__name__)
 
