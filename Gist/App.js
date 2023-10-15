@@ -23,40 +23,21 @@ export default function App() {
       <StatusBar> </StatusBar>
       <View
         //HEADER
-        style={{
-          backgroundColor: "#AA767C",
-          flex: 0.125,
-          justifyContent: "center",
-        }}
+        style={styles.header}
       >
         <Text style={{ fontSize: 45 }}>Gist.</Text>
       </View>
 
       <View
         //MAIN SCREEN
-        style={{
-          backgroundColor: "#F9BFC6",
-          flex: 1,
-        }}
+        style={styles.main}
       ></View>
 
       <View
         //FOOTER
-        style={{
-          backgroundColor: "#F9BFC6",
-          flex: 0.15,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={styles.footer}
       >
-        <View
-          style={{
-            width: 100,
-            height: 100,
-            alignItems: "Center",
-            justifyContent: "center",
-          }}
-        >
+        <View style={styles.addContainer}>
           <Button
             title="Add New List"
             onPress={() => console.log("Bruh")}
@@ -73,5 +54,30 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  header: {
+    backgroundColor: "#AA767C",
+    flex: 0.125,
+    justifyContent: "center",
+  },
+
+  footer: {
+    backgroundColor: "#F9BFC6",
+    flex: 0.15,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  addContainer: {
+    width: 100,
+    height: 100,
+    alignItems: "Center",
+    justifyContent: "center",
+  },
+
+  main: {
+    backgroundColor: "#F9BFC6",
+    flex: 1,
   },
 });
