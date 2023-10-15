@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, TextInput, Button, FlatList} from 'react-native';
+import { StyleSheetList, Text, View, SafeAreaView, TextInput, Button, FlatList} from 'react-native';
+import {useFonts} from 'expo-font';
 
 export default function List({active, expanded, setActive, setExpanded}) {
     const [title, setTitle] = useState("New Gist");
@@ -8,6 +9,26 @@ export default function List({active, expanded, setActive, setExpanded}) {
         setActive(false);
         setExpanded(false);
     }
+    const [data, setData] = useState([
+        {name: 'Name', price: 'Price', quantity: 'Quantity',}
+      ]);
+
+      const addItem = () => {
+        const newItem = {
+          quantity: (data.length + 1).toString(),
+          name: `Item ${data.length + 1}`,
+          price: 'Price'
+        };
+        setData([...data, newItem]);
+      };
+
+    render = ({ item }) => (
+        <View style={{ padding: 10 }}>
+            <Text>{item.name}</Text>
+            <Text>{item.price}</Text>
+            <Text>{item.quantity}</Text>
+        </View>
+    );
 
     if (!expanded) {
         return (
@@ -34,8 +55,14 @@ export default function List({active, expanded, setActive, setExpanded}) {
                 />
             </View>
             <View>
-                {/* <FlatList  */}
-                {/* /> */}
+                <View>
+                  <Button title="Add Item" onPress={addItem} />
+                  <FlatList
+                    data={data}
+                    keyExtractor={(item, index) => "key" + index}
+                    renderItem={render}
+                  />
+                </View>
 
                 <TextInput 
                     placeholder="New item"
@@ -43,4 +70,16 @@ export default function List({active, expanded, setActive, setExpanded}) {
             </View>
         </View>
     );
+
+    const styles = StyleSheet.create({
+        container: {
+            flex:
+            marginTop:
+        }
+        item: {
+            backgroundColor:
+            padding:
+            marginVertical
+        }
+    })
 }
