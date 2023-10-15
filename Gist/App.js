@@ -35,6 +35,25 @@ export default function App() {
     loadFont();
   }, []);
 
+  const [lists, setLists] = useState([
+    <List
+      active={active}
+      expanded={expanded}
+      setExpanded={setExpanded}
+      setActive={setActive}
+    />
+  ]);
+  const addList = (index) => {
+    const newItem = <List
+      active={active}
+      expanded={expanded}
+      setExpanded={setExpanded}
+      setActive={setActive}
+    />
+    setLists([...data, newItem]);
+    setExpanded(true);
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -54,12 +73,10 @@ export default function App() {
         //MAIN SCREEN
         style={styles.main}
       >
-        <List
-          active={active}
-          expanded={expanded}
-          setExpanded={setExpanded}
-          setActive={setActive}
-        />
+        <View>
+          {lists}
+        </View>
+
       </View>
 
       <View
@@ -69,7 +86,7 @@ export default function App() {
         <View style={styles.addContainer}>
           <Button
             title="Add New List"
-            onPress={() => console.log("Bruh")}
+            onPress={addList}
             color="#AA767C"
           />
         </View>
