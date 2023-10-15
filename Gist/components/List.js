@@ -12,7 +12,6 @@ export default function List({active, expanded, setActive, setExpanded}) {
     const [data, setData] = useState([
         {name: 'Name', price: 'Price', quantity: 'Quantity',}
       ]);
-
       const addItem = () => {
         const newItem = {
           quantity: (data.length + 1).toString(),
@@ -23,7 +22,7 @@ export default function List({active, expanded, setActive, setExpanded}) {
       };
 
     render = ({ item }) => (
-        <View style={{ padding: 10 }}>
+        <View>
             <Text>{item.name}</Text>
             <Text>{item.price}</Text>
             <Text>{item.quantity}</Text>
@@ -70,16 +69,4 @@ export default function List({active, expanded, setActive, setExpanded}) {
             </View>
         </View>
     );
-
-    const styles = StyleSheet.create({
-        container: {
-            flex:
-            marginTop:
-        }
-        item: {
-            backgroundColor:
-            padding:
-            marginVertical
-        }
-    })
 }
